@@ -1,0 +1,40 @@
+<div class="alert alert-info">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Info!</strong> Type something on the text input and press <strong>Chat</strong> button to get a response.
+</div>
+
+<div class="bs-callout bs-callout-info warwick-response hide" id="callout-alerts-no-default">
+  <h4>Warwick says:</h4>
+  <p id="warwick-response"> </p>
+</div>
+
+<div class="row home-row">
+  <div class="col-lg-12">
+    <div class="input-group">
+      <input id="query" type="text" class="form-control" placeholder="Say something to Warwick...">
+      <span class="input-group-btn">
+        <button id="warwick-chat" class="btn btn-default" type="button">Chat</button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+
+$(document).ready(function(){
+  $('#warwick-chat').on('click', function(event) {
+    $.ajax({
+      url: '/ask_warwick',
+      type: 'json',
+      method: 'get',
+      data: { query: $('#query').val() },
+      success: function(data) {
+        $('.warwick-response').removeClass('hide');
+        $('#warwick-response').html(data['response']);
+        $('#query').val('');
+      }
+    });
+  });
+});
+
+</script>
