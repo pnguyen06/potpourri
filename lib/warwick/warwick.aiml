@@ -2,16 +2,14 @@
 
 <aiml version="1.0.1">
 
+<category>
+	<pattern>HELLO</pattern>
+	<template>Hi there, Vettery</template>
+</category>
+<category>
+	<pattern>I LIKE *</pattern>
+	<template>I like <star/> too</template>
+</category>
 
-<category>
-  <pattern>HELLO</pattern>
-  <template>Ahoy</template>
-</category>
-<category>
-  <pattern>HI</pattern>
-  <template>
-    <srai>HELLO</srai>
-  </template>
-</category>
 
 </aiml>
