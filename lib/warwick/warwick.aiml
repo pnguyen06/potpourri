@@ -7,6 +7,10 @@
 	<template>Hi there, Vettery</template>
 </category>
 <category>
+    <pattern>HI</pattern>
+    <template><srai>HELLO</srai></template>
+</category>
+<category>
 	<pattern>I LIKE *</pattern>
 	<template>I like <star/> too</template>
 </category>
